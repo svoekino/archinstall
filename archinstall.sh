@@ -14,15 +14,6 @@ echo_red() {
     echo -e "${RED}$1${NC}"
 }
 
-# Check platform size
-
-#PLATFORM_SIZE=/sys/firmware/efi/fw_platform_size
-
-#if [ "$PLATFORM_VALUE" != "64" ]; then
-#    echo_red "Required 64 platform size instead of $PLATFORM_VALUE"
-#    exit 1
-# fi
-
 # Formatting volumes 
 
 echo_green "=== Formatting volumes ==="
@@ -34,7 +25,6 @@ mkfs.btrfs /dev/sda2
 echo_green "=== Mount volumes ==="
 
 mount /dev/sda2 /mnt
-mount --mkdir /dev/sda1 /mnt/boot
 
 # Create subvolumes
 
@@ -47,12 +37,13 @@ btrfs subvolume create /mnt/@home
 echo_green "=== Unmount volume ==="
 umount /dev/sda2
 
-# Mount subvolumes
+# Mount subvolumes and boot
 
-echo_green "=== Mount subvolumes ==="
+echo_green "=== Mount subvolumes and boot ==="
 
 mount -o subvol=@ /dev/sda2 /mnt
 mount --mkdir -o subvol=@home /dev/sda2 /mnt/home
+mount --mkdir /dev/sda1 /mnt/boot
 
 # Install Arch
 
@@ -60,17 +51,21 @@ echo_green "=== Install Arch ==="
 
 pacstrap -K /mnt base linux linux-headers linux-lts linux-lts-headers linux-firmware sudo nano grub efibootmgr
 
-# Activate chroot
-
-echo_green "=== Activate chroot ==="
-
-arch-chroot /mnt
-
 # Generate fstab
 
 echo_green "=== Generate fstab ==="
 
 genfstab -U /mnt >> /mnt/etc/fstab
+
+
+
+
+
+# Activate chroot
+
+echo_green "=== Activate chroot ==="
+
+arch-chroot /mnt
 
 # Set local time
 
@@ -81,5 +76,26 @@ hwclock --systohc
 
 # Set hostname
 
+echo_green "=== Set hostname ==="
+
 echo "svoekino" > /etc/hostname
 
+# GRUB
+
+echo_green "=== Set GRUB ==="
+
+grub-install --efi-directory=/boot/efi --boot-directory=/boot/efi/EFI --bootloader-id=grub
+
+mkdir /boot/grub
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# Gnome
+
+echo_green "=== Install gnome ==="
+
+pacman -S gnome
+systemctl enable gdm.service
+
+echo_green "=== Install complete ==="
+echo ""
+echo_green "=== You can reboot the system ==="

@@ -12,6 +12,9 @@ timedatectl
 ## Disks
 cfdisk
 
+## Grub
+grub efibootmgr
+
 ```
 /dev/sda1 2G EFI System
 /dev/sda2 Linux filesystem (x86-64)
@@ -26,6 +29,9 @@ btrfs subvolume list /dev/sda2
 
 ## Check fstab
 cat /etc/fstab
+```
+rw,relatime,discard=async,compress=zstd:3,ssd,space_cache=v2
+```
 
 ***
 
