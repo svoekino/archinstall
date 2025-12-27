@@ -34,7 +34,6 @@ echo_green "=== Set GRUB ==="
 
 grub-install --target=x86_64-efi  --efi-directory=/boot/efi --bootloader-id=grub
 
-mkdir /boot/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # Gnome
@@ -44,6 +43,6 @@ grub-mkconfig -o /boot/grub/grub.cfg
 # pacman -S gnome
 # systemctl enable gdm.service
 
-echo_green "=== Install complete ==="
+echo_green "=== Install completedca ==="
 echo ""
 echo_green "=== Manual adjustment is required ==="

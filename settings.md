@@ -1,4 +1,10 @@
 # Check
+TODO
+проверить 
+fstab
+subvol
+
+
 
 ## platform size check
 /sys/firmware/efi/fw_platform_size
@@ -43,7 +49,11 @@ arch-chroot /mnt
 ## Localization 
 nano /etc/locale.gen 
 locale-gen
-cat /etc/locale.conf
+
+echo "LANG=ru_RU.UTF-8" > /etc/locale.conf
+
+# TODO 
+настроить русские шрифты в консоли
 
 ## Root password
 passwd
@@ -56,3 +66,12 @@ passwd
 exit
 umount -R /mnt
 reboot
+
+# User
+useradd -m -G wheel -s /bin/bash username
+passwd username
+
+EDITOR=nano visudo
+```
+# %wheel ALL=(ALL:ALL) ALL
+```
