@@ -49,7 +49,7 @@ mount --mkdir /dev/vda1 /mnt/boot
 
 echo_green "=== Install Arch ==="
 
-pacstrap -K /mnt base linux linux-headers linux-lts linux-lts-headers linux-firmware sudo nano grub efibootmgr
+pacstrap -K /mnt base linux linux-headers linux-lts linux-lts-headers linux-firmware sudo nano grub efibootmgr pipewire
 
 # Generate fstab
 
@@ -67,35 +67,4 @@ echo_green "=== Activate chroot ==="
 
 arch-chroot /mnt
 
-# Set local time
 
-echo_green "=== Set local time ==="
-
-ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
-hwclock --systohc
-
-# Set hostname
-
-echo_green "=== Set hostname ==="
-
-echo "svoekino" > /etc/hostname
-
-# GRUB
-
-echo_green "=== Set GRUB ==="
-
-grub-install --efi-directory=/boot/efi --boot-directory=/boot/efi/EFI --bootloader-id=grub
-
-mkdir /boot/grub
-grub-mkconfig -o /boot/grub/grub.cfg
-
-# Gnome
-
-# echo_green "=== Install gnome ==="
-
-# pacman -S gnome
-# systemctl enable gdm.service
-
-echo_green "=== Install complete ==="
-echo ""
-echo_green "=== You can reboot the system ==="

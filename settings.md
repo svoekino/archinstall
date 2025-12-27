@@ -47,3 +47,12 @@ cat /etc/locale.conf
 
 ## Root password
 passwd
+
+
+***
+
+# End
+
+exit
+umount -R /mnt
+reboot
