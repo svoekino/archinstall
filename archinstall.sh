@@ -18,13 +18,13 @@ echo_red() {
 
 echo_green "=== Formatting volumes ==="
 
-mkfs.fat -F 32 /dev/sda1
-mkfs.btrfs /dev/sda2
+mkfs.fat -F 32 /dev/vda1
+mkfs.btrfs /dev/vda2
 
 # Mount volumes
 echo_green "=== Mount volumes ==="
 
-mount /dev/sda2 /mnt
+mount /dev/vda2 /mnt
 
 # Create subvolumes
 
@@ -35,15 +35,15 @@ btrfs subvolume create /mnt/@home
 
 # Unmount volume
 echo_green "=== Unmount volume ==="
-umount /dev/sda2
+umount /dev/vda2
 
 # Mount subvolumes and boot
 
 echo_green "=== Mount subvolumes and boot ==="
 
-mount -o subvol=@ /dev/sda2 /mnt
-mount --mkdir -o subvol=@home /dev/sda2 /mnt/home
-mount --mkdir /dev/sda1 /mnt/boot
+mount -o subvol=@ /dev/vda2 /mnt
+mount --mkdir -o subvol=@home /dev/vda2 /mnt/home
+mount --mkdir /dev/vda1 /mnt/boot
 
 # Install Arch
 
