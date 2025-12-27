@@ -19,7 +19,7 @@ echo_red() {
 echo_green "=== Formatting volumes ==="
 
 mkfs.fat -F 32 /dev/vda1
-mkfs.btrfs /dev/vda2
+mkfs.btrfs -f /dev/vda2
 
 # Mount volumes
 echo_green "=== Mount volumes ==="
