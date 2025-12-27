@@ -36,13 +36,12 @@ grub-install --target=x86_64-efi  --efi-directory=/boot/efi --bootloader-id=grub
 
 grub-mkconfig -o /boot/grub/grub.cfg
 
-# Gnome
+# GDM
 
-# echo_green "=== Install gnome ==="
+echo_green "=== Enable GDM ==="
 
-# pacman -S gnome
-# systemctl enable gdm.service
+systemctl enable gdm.service
 
-echo_green "=== Install completedca ==="
+echo_green "=== Install completed ==="
 echo ""
 echo_green "=== Manual adjustment is required ==="

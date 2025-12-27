@@ -52,11 +52,23 @@ locale-gen
 
 echo "LANG=ru_RU.UTF-8" > /etc/locale.conf
 
-# TODO 
-настроить русские шрифты в консоли
+# Russian fonts
+setfont cyr-sun16
 
 ## Root password
 passwd
+
+
+***
+
+# User
+useradd -m -G wheel -s /bin/bash username
+passwd username
+
+EDITOR=nano visudo
+```
+# %wheel ALL=(ALL:ALL) ALL
+```
 
 
 ***
@@ -67,11 +79,3 @@ exit
 umount -R /mnt
 reboot
 
-# User
-useradd -m -G wheel -s /bin/bash username
-passwd username
-
-EDITOR=nano visudo
-```
-# %wheel ALL=(ALL:ALL) ALL
-```
