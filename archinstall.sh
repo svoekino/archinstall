@@ -43,13 +43,13 @@ echo_green "=== Mount subvolumes and boot ==="
 
 mount -o subvol=@ /dev/vda2 /mnt
 mount --mkdir -o subvol=@home /dev/vda2 /mnt/home
-mount --mkdir /dev/vda1 /mnt/boot
+mount --mkdir /dev/vda1 /mnt/boot/efi
 
 # Install Arch
 
 echo_green "=== Install Arch ==="
 
-pacstrap -K /mnt base linux linux-headers linux-lts linux-lts-headers linux-firmware sudo nano grub efibootmgr pipewire
+pacstrap -K /mnt base linux linux-headers linux-lts linux-lts-headers linux-firmware sudo nano grub efibootmgr
 
 # Generate fstab
 
@@ -57,14 +57,5 @@ echo_green "=== Generate fstab ==="
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-
-
-
-
-# Activate chroot
-
-echo_green "=== Activate chroot ==="
-
-arch-chroot /mnt
 
 

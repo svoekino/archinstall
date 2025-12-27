@@ -32,7 +32,7 @@ echo "svoekino" > /etc/hostname
 
 echo_green "=== Set GRUB ==="
 
-grub-install --efi-directory=/boot/efi --boot-directory=/boot/efi/EFI --bootloader-id=grub
+grub-install --target=x86_64-efi  --efi-directory=/boot/efi --bootloader-id=grub
 
 mkdir /boot/grub
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -46,4 +46,4 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 echo_green "=== Install complete ==="
 echo ""
-echo_green "=== You can reboot the system ==="
+echo_green "=== Manual adjustment is required ==="
