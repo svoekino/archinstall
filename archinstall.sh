@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -e +x
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -49,7 +49,7 @@ mount --mkdir /dev/vda1 /mnt/boot/efi
 
 echo_green "=== Install Arch ==="
 
-pacstrap -K /mnt base linux linux-headers linux-lts linux-lts-headers linux-firmware sudo nano grub efibootmgr gnome networkmanager pipewire
+pacstrap -K /mnt base linux linux-headers linux-lts linux-lts-headers linux-firmware sudo nano grub efibootmgr gnome networkmanager pipewire git
 
 # Generate fstab
 

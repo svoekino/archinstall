@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -e +x
 
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -41,6 +41,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo_green "=== Enable GDM ==="
 
 systemctl enable gdm.service
+
+# NetworkManager
+
+echo_green "=== Enable NetworkManager ==="
+
+systemctl start NetworkManager
 
 echo_green "=== Install completed ==="
 echo ""
