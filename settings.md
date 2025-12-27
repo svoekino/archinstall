@@ -1,5 +1,8 @@
 # Check
 
+## platform size check
+/sys/firmware/efi/fw_platform_size
+
 ## Check internet
 ping ping.archlinux.org
 

@@ -16,12 +16,12 @@ echo_red() {
 
 # Check platform size
 
-PLATFORM_SIZE=/sys/firmware/efi/fw_platform_size
+#PLATFORM_SIZE=/sys/firmware/efi/fw_platform_size
 
-if [ "$PLATFORM_VALUE" != "64" ]; then
-    echo_red "Required 64 platform size instead of $PLATFORM_VALUE"
-    exit 1
-fi
+#if [ "$PLATFORM_VALUE" != "64" ]; then
+#    echo_red "Required 64 platform size instead of $PLATFORM_VALUE"
+#    exit 1
+# fi
 
 # Formatting volumes 
 
