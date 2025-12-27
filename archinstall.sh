@@ -91,10 +91,10 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 # Gnome
 
-echo_green "=== Install gnome ==="
+# echo_green "=== Install gnome ==="
 
-pacman -S gnome
-systemctl enable gdm.service
+# pacman -S gnome
+# systemctl enable gdm.service
 
 echo_green "=== Install complete ==="
 echo ""
