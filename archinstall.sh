@@ -19,7 +19,7 @@ echo_red() {
 PLATFORM_SIZE=/sys/firmware/efi/fw_platform_size
 
 if [ "$PLATFORM_VALUE" != "64" ]; then
-    echo_red "Required 64 platform size"
+    echo_red "Required 64 platform size instead of $PLATFORM_VALUE"
     exit 1
 fi
 

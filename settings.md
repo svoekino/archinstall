@@ -21,6 +21,9 @@ fdisk -l
 
 btrfs subvolume list /dev/sda2
 
+## Check fstab
+cat /etc/fstab
+
 ***
 
 # Set
