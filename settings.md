@@ -16,8 +16,8 @@ cfdisk
 grub efibootmgr
 
 ```
-/dev/sda1 2G EFI System
-/dev/sda2 Linux filesystem (x86-64)
+/dev/vda1 2G EFI System
+/dev/vda2 Linux filesystem (x86-64)
 ```
 
 ## Check disks
@@ -25,7 +25,7 @@ fdisk -l
 
 ## Check subvolumes
 
-btrfs subvolume list /dev/sda2
+btrfs subvolume list /dev/vda2
 
 ## Check fstab
 cat /etc/fstab
