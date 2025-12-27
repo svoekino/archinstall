@@ -46,7 +46,7 @@ systemctl enable gdm.service
 
 echo_green "=== Enable NetworkManager ==="
 
-systemctl start NetworkManager
+systemctl enable NetworkManager
 
 echo_green "=== Install completed ==="
 echo ""
