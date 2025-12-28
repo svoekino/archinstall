@@ -6,7 +6,7 @@
 cfdisk
 ```
 
-/dev/vda1 2G EFI System 
+/dev/vda1 2G EFI System \
 /dev/vda2 Linux filesystem (x86-64)
 
 

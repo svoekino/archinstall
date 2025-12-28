@@ -8,3 +8,4 @@
 - [ ] pacman -S amd-ucode && grub-mkconfig -o /boot/grub/grub.cfg
 - [ ] xwayland wayland wayland-protocols xdg-utils xdg-user-dirs (install??? or exist in gnome dependencies)
 - [ ] echo "DisallowRoot=true" >> /etc/gdm/custom.conf
+- [ ] zsh
