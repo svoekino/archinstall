@@ -54,7 +54,7 @@ echo "LANG=ru_RU.UTF-8" > /etc/locale.conf
 
 # Russian fonts
 setfont cyr-sun16
-
+timeshift
 ## Root password
 passwd
 
@@ -69,6 +69,11 @@ EDITOR=nano visudo
 ```
 # %wheel ALL=(ALL:ALL) ALL
 ```
+
+
+# TODO 
+timeshift
+
 
 
 ***
