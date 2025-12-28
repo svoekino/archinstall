@@ -49,7 +49,7 @@ mount --mkdir /dev/vda1 /mnt/boot/efi
 
 echo_green "=== Install Arch ==="
 
-pacstrap -K /mnt base linux linux-headers linux-lts linux-lts-headers linux-firmware sudo nano grub efibootmgr gnome networkmanager pipewire git timeshift mesa libva-mesa-driver vulkan-radeon xorg-server
+pacstrap -K /mnt base linux linux-headers linux-lts linux-lts-headers linux-firmware sudo nano grub efibootmgr gnome networkmanager pipewire git zsh timeshift mesa libva-mesa-driver vulkan-radeon xorg-server
 
 # Generate fstab
 
