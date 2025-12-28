@@ -79,6 +79,8 @@ systemctl start grub-btrfsd.service
 timeshift --create --comments "snapshot"
 ```
 
+***
+
 
 # Exit from chroot
 

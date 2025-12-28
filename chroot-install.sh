@@ -54,6 +54,14 @@ echo_green "=== Enable NetworkManager ==="
 
 systemctl enable NetworkManager
 
+# Reflector
+
+echo_green "=== Set reflector ==="
+
+reflector --country Russia --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+# Resolve
+
 echo_green "=== Install completed ==="
 echo ""
 echo_green "=== Manual adjustment is required ==="
