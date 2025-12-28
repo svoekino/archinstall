@@ -1,6 +1,6 @@
 # Check
 
-## platform size check
+## Platform size check
 
 ```
 /sys/firmware/efi/fw_platform_size
