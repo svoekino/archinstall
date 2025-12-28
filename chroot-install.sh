@@ -28,6 +28,12 @@ echo_green "=== Set hostname ==="
 
 echo "svoekino" > /etc/hostname
 
+# Set cyr font
+
+echo_green "=== Set cyr font ==="
+
+echo "FONT=cyr-sun16" >> /etc/vconsole.conf
+
 # GRUB
 
 echo_green "=== Set GRUB ==="
