@@ -10,3 +10,9 @@
   - Specific disk layout (e.g., `/dev/nvme0n1`).
 - **Risk of data loss**: Running this on unfamiliar hardware may erase disks.
 - **No error handling**: Minimal safeguards — it expects perfect conditions.
+
+
+## Required partitions
+
+/dev/sda1 2G EFI System
+/dev/sda2 Linux filesystem (x86-64)
