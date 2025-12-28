@@ -54,34 +54,6 @@ EDITOR=nano visudo # uncomment: %wheel ALL=(ALL:ALL) ALL
 
 ***
 
-# Timeshift
-
-```
-systemctl edit --full grub-btrfsd
-```
-
-## Change the line
-ExecStart=/usr/bin/grub-btrfsd /.snapshots --syslog
-
-## To
-ExecStart=/usr/bin/grub-btrfsd --syslog --timeshift-auto
-
-## Restart service
-
-```
-systemctl start grub-btrfsd.service
-
-```
-
-## Create snapshot
-
-```
-timeshift --create --comments "snapshot"
-```
-
-***
-
-
 # Exit from chroot
 
 ```

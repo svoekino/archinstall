@@ -58,7 +58,8 @@ systemctl enable NetworkManager
 
 echo_green "=== Set reflector ==="
 
-reflector --country Russia --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+reflector --country Russia --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist 2>dev/null
+
 
 # Resolve
 

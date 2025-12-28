@@ -1,8 +1,8 @@
 # TODO 
 
 - [ ] swap on zram
-- [ ] zsh
 - [ ] firewall
+- [ ] порядок загрузки в grub
 
 ***
 
