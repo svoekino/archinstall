@@ -41,7 +41,7 @@ echo "LANG=ru_RU.UTF-8" > /etc/locale.conf
 passwd
 ```
 
-# Create user
+## Create user
 
 ```
 useradd -m -G wheel -s /bin/bash username
@@ -50,6 +50,16 @@ passwd username
 
 ```
 EDITOR=nano visudo # uncomment: %wheel ALL=(ALL:ALL) ALL
+```
+
+## Grub settings
+
+```
+nano /etc/default/grub
+
+# set
+GRUB_SAVEDEFAULT=true
+GRUB_DEFAULT=saved
 ```
 
 ***
