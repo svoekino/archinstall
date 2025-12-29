@@ -6,6 +6,12 @@
 
 ***
 
+# Bugs
+
+- [ ] reflector
+
+***
+
 # Discuss
 
 - [ ] mkinitcpio -P

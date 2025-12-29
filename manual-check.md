@@ -29,7 +29,7 @@ fdisk -l
 ## Check subvolumes
 
 ```
-btrfs subvolume list /dev/vda2
+btrfs subvolume list /dev/sda2
 ```
 
 ## Check fstab
