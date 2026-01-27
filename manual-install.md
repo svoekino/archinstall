@@ -44,7 +44,7 @@ passwd
 ## Create user
 
 ```
-useradd -m -G wheel -s /bin/bash username
+useradd -m -G wheel -s /bin/zsh username
 passwd username
 ```
 
