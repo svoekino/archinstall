@@ -37,11 +37,16 @@ timeshift --create --comments "snapshot"
 https://ohmyz.sh/#install
 
 # ZRAM
-sudo nano /etc/systemd/zram-generator.conf
 
+```
+sudo nano /etc/systemd/zram-generator.conf
+```
+
+```
 [zram0]
 zram-size = ram / 4
 compression-algorithm = zstd
+```
 
 
 

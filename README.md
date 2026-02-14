@@ -7,7 +7,7 @@
 ## Important Notes
 
 - **Not for general use**: The script assumes:
-  - Specific disk layout (e.g., `/dev/nvme0n1`).
+  - Specific disk layout (e.g., `/dev/sda`).
 - **Risk of data loss**: Running this on unfamiliar hardware may erase disks.
 - **No error handling**: Minimal safeguards — it expects perfect conditions.
 
