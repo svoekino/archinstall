@@ -41,15 +41,17 @@ umount /dev/sda2
 
 echo_green "=== Mount subvolumes and boot ==="
 
-mount -o subvol=@ /dev/sda2 /mnt
-mount --mkdir -o subvol=@home /dev/sda2 /mnt/home
+BTRFS_OPTS="relatime,discard=async,compress=zstd:3,ssd,space_cache=v2"
+
+mount -o subvol=@,$BTRFS_OPTS /dev/sda2 /mnt
+mount --mkdir -o subvol=@home,$BTRFS_OPTS /dev/sda2 /mnt/home
 mount --mkdir /dev/sda1 /mnt/boot/efi
 
 # Install Arch
 
 echo_green "=== Install Arch ==="
 
-pacstrap -K /mnt base linux linux-headers linux-firmware sudo nano grub efibootmgr gnome networkmanager pipewire git zsh timeshift mesa libva-mesa-driver vulkan-radeon xorg-server grub-btrfs inotify-tools reflector amd-ucode zram-generator hunspell-ru hunspell-en_us
+pacstrap -K /mnt base base-devel linux linux-headers linux-firmware sudo nano grub efibootmgr gnome networkmanager pipewire git zsh timeshift mesa libva-mesa-driver vulkan-radeon xorg-server grub-btrfs inotify-tools reflector amd-ucode zram-generator hunspell-ru hunspell-en_us
 
 # Generate fstab
 

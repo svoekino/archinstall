@@ -19,15 +19,7 @@ cfdisk
 arch-chroot /mnt
 ```
 
-## Set fstab
-
-For root and home partitions
-
-```
-rw,relatime,discard=async,compress=zstd:3,ssd,space_cache=v2
-```
-
-## Localization 
+## Localization
 
 ```
 nano /etc/locale.gen 
