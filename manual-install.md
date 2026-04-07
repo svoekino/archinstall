@@ -31,6 +31,8 @@ rw,relatime,discard=async,compress=zstd:3,ssd,space_cache=v2
 
 ```
 nano /etc/locale.gen 
+# en_US.UTF-8 - uncomment
+# ru_RU.UTF-8 - uncomment
 locale-gen
 echo "LANG=ru_RU.UTF-8" > /etc/locale.conf
 ```
